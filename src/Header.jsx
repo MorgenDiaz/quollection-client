@@ -4,6 +4,10 @@ import { useState } from "react";
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  const MENU_LINK_1 = `View Quollection`;
+  const MENU_LINK_2 = `Add Quote`;
+  const MENU_LINK_3 = `Daily Quote`;
+
   return (
     <div className="flex items-center justify-between px-4 py-8 border-b border-gray-400">
       <a href="/">
@@ -11,17 +15,17 @@ function Header() {
       </a>
       <nav>
         <section className="flex MOBILE-MENU lg:hidden">
-          <div
+          <button
             className="space-y-2 HAMBURGER-ICON"
             onClick={() => setIsNavOpen((prev) => !prev)}
           >
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-          </div>
+          </button>
 
           <div className={isNavOpen ? `showMenuNav` : `hideMenuNav`}>
-            <div
+            <button
               className="absolute top-0 right-0 px-8 py-8"
               onClick={() => setIsNavOpen(false)}
             >
@@ -37,16 +41,16 @@ function Header() {
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
-            </div>
+            </button>
             <ul className="flex flex-col items-center justify-between min-h-[250px]">
               <li className="my-8 uppercase border-b border-gray-400">
-                <a href="/about">About</a>
+                <a href="/about">{MENU_LINK_1}</a>
               </li>
               <li className="my-8 uppercase border-b border-gray-400">
-                <a href="/portfolio">Portfolio</a>
+                <a href="/portfolio">{MENU_LINK_2}</a>
               </li>
               <li className="my-8 uppercase border-b border-gray-400">
-                <a href="/contact">Contact</a>
+                <a href="/contact">{MENU_LINK_3}</a>
               </li>
             </ul>
           </div>
@@ -54,13 +58,13 @@ function Header() {
 
         <ul className="hidden space-x-8 DESKTOP-MENU lg:flex">
           <li>
-            <a href="/about">About</a>
+            <a href="/about">{MENU_LINK_1}</a>
           </li>
           <li>
-            <a href="/portfolio">Portfolio</a>
+            <a href="/portfolio">{MENU_LINK_2}</a>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <a href="/contact">{MENU_LINK_3}</a>
           </li>
         </ul>
       </nav>
