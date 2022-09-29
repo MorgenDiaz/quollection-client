@@ -1,6 +1,6 @@
 import React from "react";
 
-function DailyQuote() {
+function NoQuotesAvailable() {
   return (
     <div className="flex flex-col items-center justify-center h-full gap-6 p-4 text-center">
       <h2 className="text-2xl font-semibold text-gray-900">
@@ -14,4 +14,4 @@ function DailyQuote() {
   );
 }
 
-export default DailyQuote;
+export default NoQuotesAvailable;
