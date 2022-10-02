@@ -6,6 +6,7 @@ import Header from "./Header";
 import DailyQuote from "./routes/daily-quote/DailyQuote";
 import NoQuotesAvailable from "./routes/daily-quote/NoQuotesAvailable";
 import EditQuote from "./routes/edit-quote/EditQuote";
+import ViewQuollection from "./routes/view-quollection/ViewQuollection";
 
 function App() {
   const quote = useRandomQuote();
@@ -18,7 +19,10 @@ function App() {
           path="/"
           element={quote ? <DailyQuote quote={quote} /> : <NoQuotesAvailable />}
         />
+
         <Route path="/edit_quote" element={<EditQuote />} />
+
+        <Route path="/view_quollection" element={<ViewQuollection />} />
       </Routes>
     </div>
   );
