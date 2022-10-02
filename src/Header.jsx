@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -47,10 +48,14 @@ function Header() {
                 <a href="/about">{MENU_LINK_1}</a>
               </li>
               <li className="my-8 uppercase border-b border-gray-400">
-                <a href="/portfolio">{MENU_LINK_2}</a>
+                <Link onClick={() => setIsNavOpen(false)} to="/edit_quote">
+                  {MENU_LINK_2}
+                </Link>
               </li>
               <li className="my-8 uppercase border-b border-gray-400">
-                <a href="/contact">{MENU_LINK_3}</a>
+                <Link onClick={() => setIsNavOpen(false)} to="/">
+                  {MENU_LINK_3}
+                </Link>
               </li>
             </ul>
           </div>
