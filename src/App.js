@@ -2,9 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import useRandomQuote from "./hooks/use-random-quote";
 import "./App.css";
-import DailyQuote from "./routes/daily-quote/DailyQuote";
 import Header from "./Header";
+import DailyQuote from "./routes/daily-quote/DailyQuote";
 import NoQuotesAvailable from "./routes/daily-quote/NoQuotesAvailable";
+import EditQuote from "./routes/edit-quote/EditQuote";
 
 function App() {
   const quote = useRandomQuote();
@@ -17,6 +18,7 @@ function App() {
           path="/"
           element={quote ? <DailyQuote quote={quote} /> : <NoQuotesAvailable />}
         />
+        <Route path="/edit_quote" element={<EditQuote />} />
       </Routes>
     </div>
   );
