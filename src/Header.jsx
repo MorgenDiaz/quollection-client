@@ -45,7 +45,12 @@ function Header() {
             </button>
             <ul className="flex flex-col items-center justify-between min-h-[250px]">
               <li className="my-8 uppercase border-b border-gray-400">
-                <a href="/about">{MENU_LINK_1}</a>
+                <Link
+                  onClick={() => setIsNavOpen(false)}
+                  to="/view_quollection"
+                >
+                  {MENU_LINK_1}
+                </Link>
               </li>
               <li className="my-8 uppercase border-b border-gray-400">
                 <Link onClick={() => setIsNavOpen(false)} to="/edit_quote">
@@ -63,13 +68,19 @@ function Header() {
 
         <ul className="hidden space-x-8 DESKTOP-MENU lg:flex">
           <li>
-            <a href="/about">{MENU_LINK_1}</a>
+            <Link onClick={() => setIsNavOpen(false)} to="/view_quollection">
+              {MENU_LINK_1}
+            </Link>
           </li>
           <li>
-            <a href="/portfolio">{MENU_LINK_2}</a>
+            <Link onClick={() => setIsNavOpen(false)} to="/edit_quote">
+              {MENU_LINK_2}
+            </Link>
           </li>
           <li>
-            <a href="/contact">{MENU_LINK_3}</a>
+            <Link onClick={() => setIsNavOpen(false)} to="/">
+              {MENU_LINK_3}
+            </Link>
           </li>
         </ul>
       </nav>
